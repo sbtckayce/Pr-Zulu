@@ -1,0 +1,145 @@
+.plan{
+    margin-bottom: 15rem;
+    &__list{
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    &__item{
+        width: calc(33.33% - 2.667rem);
+        border: 1px solid $border--item;
+        border-radius: 1.5rem;
+        padding: 7.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: all 0.4s linear;
+        // &:hover{
+        //     border-color: transparent;
+        //     box-shadow: 0 0 50px 5px rgba(#000000, 0.09);
+
+        //     .plan__btn{
+        //         background-color: $primary-color;
+        //         color: #fff;
+        //     }
+        // }
+    }
+    &__label{
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        background-color: #ff858d;
+        color: #fff;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    &__name{
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    &__price{
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding-bottom: 3rem;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid $white--color;
+    }
+
+    &__symbol{
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.8rem;
+        vertical-align: top;
+    }
+    &__number--month{
+        font-size: 5rem;
+    }
+    &__desc{
+        margin-bottom: 5.5rem;
+    }
+    &__features{
+        font-size: 2rem;
+
+        margin-bottom: 3.55rem;
+    }
+    &__feature{
+        display: flex;
+        align-items: center;
+        color: #9ba9bc;
+       margin-bottom: 2.5rem;
+        &--icon{
+           font-size: 2rem;
+           margin-right: 1rem;
+        }
+        &--text{
+            font-size: 2rem;
+            font-weight: 300;
+        }
+       
+    }
+    &__feature:last-of-type{
+        margin-bottom: 7.5rem;
+    }
+    
+    &__btn{
+        width: max-content;
+        display: block;
+        margin: auto auto 0;
+        transition: all 0.2s linear;
+        //de no nam o cuoi thi phai flex box nen item phai co flex box
+    }
+    @media (hover:hover){
+        &__item{
+            &:hover{
+                border-color: transparent;
+                box-shadow: 0 0 50px 5px rgba(#000000, 0.09);
+    
+                .plan__btn{
+                    background-color: $primary-color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width: 1023px) {
+        &__list{
+
+            // go la grid-snap 
+           
+            display: grid;
+            justify-content: flex-start;
+            // grid-auto-columns: 90%;
+            grid-auto-columns: 70%;
+            grid-auto-flow: column;
+            // grid-gap: 1.5rem;
+            grid-gap: 0 5rem;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+            
+            &::-webkit-scrollbar {
+              display: none;
+              width: 0;
+            }
+            & > *{
+              scroll-snap-align: start;
+            }
+        }
+        &__item{
+            width: 100%;
+            // max-width: 45rem;
+        }
+    }
+   
+    
+}

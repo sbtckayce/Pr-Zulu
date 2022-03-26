@@ -1,0 +1,107 @@
+.header{
+    padding-top: 4rem;
+    &__container{
+        display: flex;
+        align-items: center;
+        margin-bottom: 7.5rem;
+      
+    }
+    &__auth{
+        display: flex;
+        margin-left: auto;
+    }
+    &__logo{
+        display: block;
+        margin-right: 18rem;
+    }
+    &__menu{
+        &--list{
+            display: flex;
+            align-items: center;
+
+        }
+        // &--item:not(:first-child){
+        //     margin-left: 7.5rem;
+
+        // }
+        &--link{
+            transition: color 0.5s ease-in-out;
+            &:hover{
+                color: $primary-color;
+            }
+        }
+
+    }
+    &__icon--menu{
+        width: 3rem;
+        height: 3rem;
+      font-size: 3rem;
+      margin-left: 1rem;
+      display: none;
+    }
+   
+    
+
+}
+
+@media screen and (min-width:1024px){
+    .header__menu--item{
+        margin-left: 7.5rem;
+    }
+}
+@media screen and (max-width:1279px) {
+    .header__logo{
+        margin-right: 0;
+    }
+    .header__menu--list{
+        margin: 0 auto;
+    }
+    .header__auth{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:1023px) {
+    .header__menu--list{
+        border-left: 1px solid;
+        bottom: 0;
+        z-index: 9999;
+        position: fixed;
+        background-color: #fff;
+        top: 0px;
+        right: 0;
+        width: 90%;
+        max-width: 300px;
+        padding: 5rem 2rem;
+        display: block;
+        // 100% = width
+        transition: all 0.2s linear;
+        transform: translateX(100%);
+    }
+    .header__menu--list.active{
+        transform: translateX(0);
+    }
+    .header__menu--link {
+        display: block;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        &:hover{
+            color: #fff;
+            background-color: $primary-color;
+        }
+    }
+    .header__auth{
+        margin-left: auto;
+    }
+    .header__icon--menu{
+        margin-left: auto;
+        display: block;
+    }
+}
+@media screen and (max-width:767px) {
+    
+}
+@media screen and (max-width:479px) {
+    .header__auth a{
+        padding: 1.5rem;
+    }
+}

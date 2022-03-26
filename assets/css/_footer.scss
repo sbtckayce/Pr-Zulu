@@ -1,0 +1,79 @@
+.footer{
+    margin-bottom: 15rem;
+    &__container{
+        display: flex;
+        align-items: stretch;
+      
+        // display: grid;
+        // grid-template-columns: 2fr 1fr 1fr 1fr;
+        // grid-column-gap: 2rem;
+    }
+    &__item:not(:first-child){
+        margin-left: 15rem;
+    }
+    &__item{
+        &--heading{
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 3.5rem;
+        }
+        &--item{
+            margin-bottom: 3.5rem;
+            font-size: 1.6rem;
+        }
+    }
+    &__logo{
+        margin-bottom: 5rem;
+    }
+    &__desc{
+        font-size: 1.6rem;
+        line-height: 1.8;
+        font-family: 300;
+        color: $text-color;
+        margin-bottom: 5rem;
+    }
+    &__social{
+        display: flex;
+        a{
+            display: inline-block;
+            margin-right: 1.8rem;
+          
+        }
+        a ion-icon{
+            width: 2rem;
+            height: 2rem;
+            padding: 1rem;
+            border-radius: 50%;
+            color: #fff;
+            background-color: var(--bg--social);
+            
+        }
+       
+    }
+    
+    
+    @media screen and (max-width: 1023px) {
+        &__container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-gap: 2rem;
+        }
+        .item--2{
+            margin-left: 0;
+        }
+        &__item{
+            &:nth-child(even){
+                margin: 0 auto;
+                // padding-left: 15rem;
+            }
+        }
+    }
+    
+}
+.item--4{
+    width: 40%;
+}
+.item--2{
+    width: 20%;
+}
